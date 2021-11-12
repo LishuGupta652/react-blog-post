@@ -2,15 +2,22 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div>
-      <nav className="home">
-        <h2>Blog</h2>
-        <div className="links">
-          <a href="/">Home</a>
-          <a href="/create">New Blog</a>
-        </div>
-      </nav>
-    </div>
+    <nav className="navbar">
+      <h1>Blog</h1>
+      <div className="links">
+        <a href="/">Home</a>
+        <a
+          href="/create"
+          style={{
+            color: "white",
+            backgroundColor: "#f1356d",
+            borderRadius: "8px",
+          }}
+        >
+          New Blog
+        </a>
+      </div>
+    </nav>
   );
 };
 
