@@ -1,11 +1,15 @@
 import "./App.css";
+import Home from "./Home";
+import Navbar from "./Navbar";
 
 function App() {
   const name = "lishu gupta";
   return (
     <div className="App">
-      <h1>{name}</h1>
-      <h1>{name}</h1>
+      <Navbar />
+      <div className="content">
+        <Home />
+      </div>
     </div>
   );
 }
