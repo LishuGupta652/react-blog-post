@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Home = () => {
-  let name = "mario";
+  const [name, setName] = useState("lishu");
+  const [age, setAge] = useState(21);
   const handleClick = (e) => {
-    console.log(e);
-    console.log("Hello");
+    setName("gupta");
+    setAge(30);
   };
-  const handleClickAnon = (name, e) => {
-    console.log("Hello " + name, e.target);
-  };
+  const handleClickAnon = (name, e) => {};
   return (
     <div className="home">
       <h1>Home</h1>
-      <button onClick={handleClick}>Click here</button>
+      <button onClick={handleClick}>
+        {name} is {age}
+      </button>
       <button onClick={(e) => handleClickAnon("lishu", e)}>Click here</button>
     </div>
   );
