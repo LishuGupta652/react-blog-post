@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([
@@ -11,15 +12,27 @@ const Home = () => {
       id: 3,
     },
   ]);
+  const [name, setName] = useState("lishu");
 
+  const handleDelete = (id) => {
+    const newBlog = blogs.filter((blog) => blog.id !== id);
+    setBlogs(newBlog);
+  };
+
+  useEffect(() => {
+    console.log(name);
+    return () => {};
+  }, [name]);
   return (
     <div className="home">
-      {blogs.map((blog) => (
-        <div className="blog-preview" key={blog.id}>
-          <h2>{blog.title}</h2>
-          <p>Written by {blog.author}</p>
-        </div>
-      ))}
+      <p>{name} </p>
+      <button onClick={() => setName("gupta")}>Change Name</button>
+      <BlogList blogs={blogs} title="All Blog" handleDelete={handleDelete} />
+      <BlogList
+        blogs={blogs.filter((blog) => blog.author === "mario")}
+        handleDelete={handleDelete}
+        title="Mario's Blog"
+      />
     </div>
   );
 };
