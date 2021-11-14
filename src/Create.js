@@ -1,16 +1,16 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("mario");
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const blog = { title, body, author };
-    setTitle("");
-    setBody("");
     console.log(blog);
     setLoading(true);
     fetch("http://localhost:8000/blogs/", {
@@ -22,6 +22,7 @@ const Create = () => {
     }).then(() => {
       console.log("Blog Created");
       setLoading(false);
+      history.push("/");
     });
   };
 
