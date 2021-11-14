@@ -9,6 +9,16 @@ json-server --watch data/db.json --port 8000
 npm start
 ```
 
+### Served using github pages this site might now work as expected because of the api used for the specific purpose
+
+[webiste:githubpages]https://lishugupta652.github.io/react-blog-post/
+
+### dev dependency
+
+```
+npm run deploy
+```
+
 ## Tech used
 
 ```
