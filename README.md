@@ -8,8 +8,8 @@
 
 ## Tech used
 
-[x] React js
-[x] json-server
-[x] Application programming interface
-[x] html
-[x] css
+React js
+json-server
+Application programming interface
+html
+css
