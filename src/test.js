@@ -4,19 +4,13 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Language: java
-// Path: src\test.js
-// TODO: Add tests.
-// Create a function that open a web browser and open a url.
-
-function openPage(url) {
-  return new Promise(function (resolve) {
-    const browser = new Browser();
-    browser.visit(url, function () {
-      resolve();
-    });
-  });
+// create a function to find prime numbers btw two numbers
+function primeNumber(min, max) {
+  var prime = [];
+  for (var i = min; i <= max; i++) {
+    if (isPrime(i)) {
+      prime.push(i);
+    }
+  }
+  return prime;
 }
-
-openPage("https://www.gitman.ml").then(function () {
-    console.log("Task completed"));
